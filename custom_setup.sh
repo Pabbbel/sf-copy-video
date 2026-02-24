@@ -122,19 +122,20 @@ download \
     "https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors" \
     "${MODELS}/clip_vision" \
     "clip_vision_h.safetensors" &
-
+    
+# --- detection ---
 download \
-"https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/blob/main/process_checkpoint/det/yolov10m.onnx" \
+"https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/resolve/main/process_checkpoint/det/yolov10m.onnx" \
 "${MODELS}/detection" \
 "yolov10m.onnx" &
 
 download \
-"https://huggingface.co/Kijai/vitpose_comfy/blob/main/onnx/vitpose_h_wholebody_model.onnx" \
+"https://huggingface.co/Kijai/vitpose_comfy/resolve/main/onnx/vitpose_h_wholebody_model.onnx" \
 "${MODELS}/detection" \
 "vitpose_h_wholebody_model.onnx" &
 
 download \
-"https://huggingface.co/Kijai/vitpose_comfy/blob/main/onnx/vitpose_h_wholebody_data.bin" \
+"https://huggingface.co/Kijai/vitpose_comfy/resolve/main/onnx/vitpose_h_wholebody_data.bin" \
 "${MODELS}/detection" \
 "vitpose_h_wholebody_data.bin" &
 
