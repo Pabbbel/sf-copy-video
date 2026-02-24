@@ -139,7 +139,21 @@ download \
 "${MODELS}/detection" \
 "vitpose_h_wholebody_data.bin" &
 
-echo "Ожидание завершения всех загрузок..."
+# --- RIFE models (в папку кастомной ноды) ---
+RIFE_DIR="/workspace/ComfyUI/custom_nodes/ComfyUI-Frame-Interpolation/ckpts/rife"
+mkdir -p "${RIFE_DIR}"
+
+download \
+    "https://huggingface.co/hfmaster/models-moved/resolve/cab6dcee2fbb05e190dbb8f536fbdaa489031a14/rife/rife49.pth" \
+    "${RIFE_DIR}" \
+    "rife49.pth" &
+
+download \
+    "https://huggingface.co/jasonot/mycomfyui/resolve/main/rife47.pth" \
+    "${RIFE_DIR}" \
+    "rife47.pth" &
+
+echo "Ожидание завершения всех загрузок..."    
 wait
 
 echo "=== 🚀Запускай комфи, все готово🚀 ==="
