@@ -38,6 +38,7 @@ mkdir -p "${MODELS}/text_encoders"
 mkdir -p "${MODELS}/vae"
 mkdir -p "${MODELS}/loras"
 mkdir -p "${MODELS}/clip_vision"
+mkdir -p "${MODELS}/detection"
 
 download() {
     local url="$1"
@@ -122,7 +123,22 @@ download \
     "${MODELS}/clip_vision" \
     "clip_vision_h.safetensors" &
 
+download \
+"https://huggingface.co/Wan-AI/Wan2.2-Animate-14B/blob/main/process_checkpoint/det/yolov10m.onnx" \
+"${MODELS}/detection" \
+"yolov10m.onnx" &
+
+download \
+"https://huggingface.co/Kijai/vitpose_comfy/blob/main/onnx/vitpose_h_wholebody_model.onnx" \
+"${MODELS}/detection" \
+"vitpose_h_wholebody_model.onnx" &
+
+download \
+"https://huggingface.co/Kijai/vitpose_comfy/blob/main/onnx/vitpose_h_wholebody_data.bin" \
+"${MODELS}/detection" \
+"vitpose_h_wholebody_data.bin" &
+
 echo "Ожидание завершения всех загрузок..."
 wait
 
-echo "=== Custom setup (sf-copy-video): завершено ==="
+echo "=== 🚀Запускай комфи, все готово🚀 ==="
